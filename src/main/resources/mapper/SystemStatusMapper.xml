@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dashboardbackend.mapper.SystemStatusMapper">
+<!-- Query DataHistory -->
+    <select id="getSystemStatus" resultType="com.example.dashboardbackend.bean.SystemStatus">
+        SELECT statusIndex, serviceId, isDetSerRunning, isDaProrunning, detSerIP, detSerMAC FROM systemStatus WHERE serviceId = #{serviceID jdbcType=INTEGER};
+    </select>
+
+</mapper>

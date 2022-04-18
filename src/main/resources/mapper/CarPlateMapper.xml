@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dashboardbackend.mapper.CarPlateMapper">
+    <!-- Query CarPlate -->
+    <select id="getCarPlate" resultType="com.example.dashboardbackend.bean.CarPlate">
+        SELECT stuIndex, studentId, studentName, isMale, studyYear, studyGroup, carPlateNum FROM stuCarplate
+    </select>
+
+    <!-- Number of record -->
+    <select id="getCarPlateCount" resultType="Integer">
+        SELECT COUNT(*) from stuCarplate;
+    </select>
+
+    <!-- Add CarPlate-->
+    <insert id="addCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
+        INSERT INTO stuCarplate (studentId, studentName, isMale, studyYear, studyGroup, carPlateNum) values (#{studentId}, #{studentName}, #{isMale}, #{studyYear}, #{studyGroup}, #{carPlateNum});
+    </insert>
+
+    <!-- Edit CarPlate-->
+    <update id="editCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
+        UPDATE stuCarplate SET studentId=#{studentId}, studentName=#{studentName}, isMale=#{isMale}, studyYear=#{studyYear}, studyGroup=#{studyGroup}, carPlateNum=#{carPlateNum} WHERE stuIndex = #{stuIndex};
+    </update>
+
+    <!-- Delete CarPlate -->
+    <delete id="deleteCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
+        DELETE FROM stuCarplate WHERE studentId = #{studentId};
+    </delete>
+
+</mapper>

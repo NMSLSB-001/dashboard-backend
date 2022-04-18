@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://database.drivethru.top:33060/mqttold
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: cto
+    password: 123456
+
+  # close cache
+  thymeleaf:
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.dashboardbackend.bean
+
+server:
+  port: 8888
