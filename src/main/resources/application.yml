@@ -2,8 +2,8 @@ spring:
   datasource:
     url: jdbc:mysql://database.drivethru.top:3306/mqttold?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: cto #normal_user # cto
-    password: 123456Aa #123456@Aa # 123456
+    username: 
+    password: 
 
   # close cache
   thymeleaf:
