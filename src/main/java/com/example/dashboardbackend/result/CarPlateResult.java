@@ -22,8 +22,8 @@ public class CarPlateResult {
         return "{" +
                 "code：" + code +
                 ", msg：" + msg +
-                ", msg：" + list +
-                ", msg：" + total+
+                ", list：" + list +
+                ", total：" + total+
                 '}';
     }
 }

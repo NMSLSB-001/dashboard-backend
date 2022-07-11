@@ -3,27 +3,27 @@
 <mapper namespace="com.example.dashboardbackend.mapper.CarPlateMapper">
     <!-- Query CarPlate -->
     <select id="getCarPlate" resultType="com.example.dashboardbackend.bean.CarPlate">
-        SELECT stuIndex, studentId, studentName, isMale, studyYear, studyGroup, carPlateNum FROM stuCarplate
+        SELECT stuIndex, studentId, studentName, isMale, studyYear, studyGroup, carPlateNum FROM stucarplate
     </select>
 
     <!-- Number of record -->
     <select id="getCarPlateCount" resultType="Integer">
-        SELECT COUNT(*) from stuCarplate;
+        SELECT COUNT(*) from stucarplate;
     </select>
 
     <!-- Add CarPlate-->
     <insert id="addCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
-        INSERT INTO stuCarplate (studentId, studentName, isMale, studyYear, studyGroup, carPlateNum) values (#{studentId}, #{studentName}, #{isMale}, #{studyYear}, #{studyGroup}, #{carPlateNum});
+        INSERT INTO stucarplate (studentId, userId, studentName, isMale, studyYear, studyGroup, carPlateNum, stuAddTimestamp) values (#{studentId}, #{userId}, #{studentName}, #{isMale}, #{studyYear}, #{studyGroup}, #{carPlateNum}, #{stuAddTimestamp});
     </insert>
 
     <!-- Edit CarPlate-->
     <update id="editCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
-        UPDATE stuCarplate SET studentId=#{studentId}, studentName=#{studentName}, isMale=#{isMale}, studyYear=#{studyYear}, studyGroup=#{studyGroup}, carPlateNum=#{carPlateNum} WHERE stuIndex = #{stuIndex};
+        UPDATE stucarplate SET studentId=#{studentId}, studentName=#{studentName}, isMale=#{isMale}, studyYear=#{studyYear}, studyGroup=#{studyGroup}, carPlateNum=#{carPlateNum} WHERE stuIndex = #{stuIndex};
     </update>
 
     <!-- Delete CarPlate -->
     <delete id="deleteCarPlate" parameterType="com.example.dashboardbackend.bean.CarPlate">
-        DELETE FROM stuCarplate WHERE studentId = #{studentId};
+        DELETE FROM stucarplate WHERE studentId = #{studentId};
     </delete>
 
 </mapper>

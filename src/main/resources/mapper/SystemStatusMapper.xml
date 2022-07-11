@@ -3,7 +3,7 @@
 <mapper namespace="com.example.dashboardbackend.mapper.SystemStatusMapper">
 <!-- Query DataHistory -->
     <select id="getSystemStatus" resultType="com.example.dashboardbackend.bean.SystemStatus">
-        SELECT statusIndex, serviceId, isDetSerRunning, isDaProrunning, detSerIP, detSerMAC FROM systemStatus WHERE serviceId = #{serviceID jdbcType=INTEGER};
+        SELECT statusIndex, serviceId, isDetSerRunning, isDaProrunning, detSerIP, detSerMAC FROM systemstatus WHERE serviceId = #{serviceID jdbcType=INTEGER};
     </select>
 
 </mapper>

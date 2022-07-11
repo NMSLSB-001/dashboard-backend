@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dashboardbackend.mapper.AuthMapper">
+
+    <select id="getUserIdByUsername" resultType="Integer">
+        SELECT userId FROM userlist WHERE username = #{username}
+    </select>
+
+    <select id="getPasswordByUsername" resultType="String">
+        SELECT userPassword FROM userlist WHERE username = #{username}
+    </select>
+
+    <insert id="authUpdate" parameterType="com.example.dashboardbackend.bean.Auth">
+        INSERT INTO authlist (userId, authToken, loginTime, expiryTime) values (#{userId}, #{authToken}, #{loginTime}, #{expiryTime});
+    </insert>
+
+    <select id="getExpiryTime" resultType="Date">
+        SELECT expiryTime FROM authlist WHERE authToken = #{authToken};
+    </select>
+
+    <select id="checkToken" resultType="Integer">
+        SELECT authIndex FROM authlist WHERE authToken = #{authToken};
+    </select>
+
+    <delete id="authDelete" parameterType="String">
+        DELETE FROM authlist WHERE authToken = #{authToken};
+    </delete>
+
+</mapper>

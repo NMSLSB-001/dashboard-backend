@@ -23,8 +23,8 @@ public class DataHistoryResult {
         return "{" +
                 "code：" + code +
                 ", msg：" + msg +
-                ", msg：" + list +
-                ", msg：" + total+
+                ", list：" + list +
+                ", total：" + total+
                 '}';
     }
 }

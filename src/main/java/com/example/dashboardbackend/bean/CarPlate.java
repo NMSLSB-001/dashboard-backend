@@ -12,11 +12,13 @@ import org.springframework.cglib.core.TinyBitSet;
 public class CarPlate {
     private Integer stuIndex;
     private String studentId;
+    private Integer userId;
     private String studentName;
     private Integer isMale;
     private String studyYear;
     private String studyGroup;
     private String carPlateNum;
+    private String stuAddTimestamp;
 
 
     @Override
@@ -24,11 +26,17 @@ public class CarPlate {
         return "Student CarPlate：" +
                 "Index=" + stuIndex +
                 ", Id=" + studentId +
+                ", UserId=" + userId +
                 ", StuName=" + studentName +
-                ", Gender=" +  isMale +
+                ", Gender=" + isMale +
                 ", Year=" + studyYear +
                 ", Group=" + studyGroup +
                 ", CarPlate=" + carPlateNum +
+                ", StuAddTimestamp=" + stuAddTimestamp +
                 '}';
+    }
+
+    public void setStuAddTimestamp(String stuAddTimestamp) {
+        this.stuAddTimestamp = stuAddTimestamp;
     }
 }

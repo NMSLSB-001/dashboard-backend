@@ -11,4 +11,9 @@ public class IndexPageController {
         return "index";
     }
 
+    @RequestMapping("/admin")
+    public String index2(){
+        return "index2";
+    }
+
 }

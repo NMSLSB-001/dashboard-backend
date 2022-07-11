@@ -16,8 +16,6 @@ public class DataHistory {
     private String detStudentClass;
     private String detImageLink;
 
-
-
     @Override
     public String toString() {
         return "Student CarPlate：" +

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dashboardbackend.mapper.UserMapper">
+
+    <insert id="userRegister" parameterType="com.example.dashboardbackend.bean.User">
+        INSERT INTO userlist (username, userPassword, createTime, updateTime) values (#{username}, #{userPassword}, #{createTime}, #{updateTime});
+    </insert>
+
+    <select id="selectByUsername" resultType="Integer">
+        SELECT userId FROM userlist WHERE username = #{username}
+    </select>
+
+    <select id="selectPasswordByUsername" resultType="String">
+        SELECT userPassword FROM userlist WHERE username = #{username}
+    </select>
+
+    <update id="updatePassword" parameterType="com.example.dashboardbackend.bean.User">
+        UPDATE userlist SET userPassword=#{userPassword}, updateTime=#{updateTime} WHERE userId = #{userId};
+    </update>
+
+</mapper>

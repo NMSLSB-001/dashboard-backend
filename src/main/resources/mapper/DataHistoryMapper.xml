@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.dashboardbackend.mapper.DataHistoryMapper">
+    <sql id="Base_Column_List" >
+        historyIndex, detTimestamp, detCarPlate, detConfidence, detStudentName, detStudentClass, detImageLink
+    </sql>
+
     <!-- Query DataHistory -->
     <select id="getDataHistory" resultType="com.example.dashboardbackend.bean.DataHistory">
-        SELECT historyIndex, detTimestamp, detCarPlate, detConfidence, detStudentName, detStudentClass, detImageLink FROM dataHistory;
+        SELECT <include refid="Base_Column_List" /> FROM datahistory
     </select>
 
     <select id="getUnDataHistory" resultType="com.example.dashboardbackend.bean.DataHistory">
-        SELECT historyIndex, detTimestamp, detCarPlate, detConfidence, detStudentName, detStudentClass, detImageLink FROM dataHistory WHERE isAuthorized = 0;
+        SELECT historyIndex, detTimestamp, detCarPlate, detConfidence, detStudentName, detStudentClass, detImageLink FROM datahistory WHERE isAuthorized = 0;
     </select>
 
     <!-- Number of record -->
     <select id="getDataHistoryCount" resultType="Integer">
-        SELECT COUNT(*) from dataHistory;
+        SELECT COUNT(*) from datahistory;
     </select>
 
     <select id="getUnDataHistoryCount" resultType="Integer">
-        SELECT COUNT(*) from dataHistory WHERE isAuthorized = 0;
+        SELECT COUNT(*) from datahistory WHERE isAuthorized = 0;
     </select>
 
 </mapper>
